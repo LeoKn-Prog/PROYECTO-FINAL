@@ -31,17 +31,22 @@ Este simulador permite visualizar el impacto de las compras realizadas y analiza
 
 ## Estructura del Proyecto
 
+## Estructura del Proyecto
+
+```text
 PROYECTO FINAL/
-
+│
 ├── css/
-│ └── style.css
-
+│   └── style.css
+│
 ├── js/
-│ └── script.js
-
+│   └── script.js
+│
 ├── index.html
-
+│
 └── README.md
+```
+
 
 ## Cómo Ejecutar
 
