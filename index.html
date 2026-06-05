@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Compras Familiares</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="hero">
+
+        <div class="hero-contenido">
+
+            <h1>Simulador de Compras Familiares</h1>
+
+            <p>
+                Analiza si el presupuesto familiar es suficiente para cubrir
+                la compra de productos básicos y toma mejores decisiones
+                de consumo.
+            </p>
+
+        </div>
+
+    </header>
+
+    <!-- ================= NAVEGACIÓN ================= -->
+
+    <nav>
+
+        <a href="#contexto">Contexto</a>
+        <a href="#simulador">Simulador</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#casos">Casos de estudio</a>
+        <a href="#conclusiones">Conclusiones</a>
+
+    </nav>
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <main>
+
+        <!-- ================= CONTEXTO ================= -->
+
+        <section id="contexto">
+
+            <article class="card">
+
+                <h2>Contexto</h2>
+
+                <p>
+                    En la actualidad muchas familias enfrentan aumentos
+                    constantes en los precios de los alimentos y productos
+                    esenciales.
+                </p>
+
+                <p>
+                    Debido a ello es importante planificar adecuadamente
+                    los gastos para evitar superar el presupuesto disponible.
+                </p>
+
+                <p>
+                    Este simulador permite registrar productos,
+                    calcular el costo total de la compra y determinar
+                    si el presupuesto alcanza o no.
+                </p>
+
+            </article>
+
+        </section>
+
+        <!-- ================= SIMULADOR ================= -->
+
+        <section id="simulador">
+
+            <article class="card">
+
+                <h2>Datos de Compra</h2>
+
+                <div class="formulario">
+
+                    <div class="grupo">
+                        <label for="presupuesto">
+                            Presupuesto Familiar (Bs)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="presupuesto"
+                            placeholder="Ej: 500">
+                    </div>
+
+                    <div class="grupo">
+                        <label for="producto">
+                            Producto
+                        </label>
+
+                        <input
+                            type="text"
+                            id="producto"
+                            placeholder="Ej: Arroz">
+                    </div>
+
+                    <div class="grupo">
+                        <label for="precio">
+                            Precio (Bs)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="precio"
+                            placeholder="Ej: 15">
+                    </div>
+
+                    <div class="grupo">
+                        <label for="cantidad">
+                            Cantidad
+                        </label>
+
+                        <input
+                            type="number"
+                            id="cantidad"
+                            placeholder="Ej: 3">
+                    </div>
+
+                </div>
+
+                <div class="botones">
+
+                    <button id="agregar">
+                        Agregar Producto
+                    </button>
+
+                </div>
+
+            </article>
+
+            <!-- TABLA -->
+
+            <article class="card">
+
+                <h2>Productos Registrados</h2>
+
+                <div class="tabla-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Subtotal</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="tablaProductos">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="botones">
+
+                    <button id="calcular">
+                        Calcular Compra
+                    </button>
+
+                    <button id="limpiar">
+                        Limpiar
+                    </button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- ================= RESULTADOS ================= -->
+
+        <section id="resultados">
+
+            <article id="resultado" class="card resultado-card">
+
+                <h2>Resultados</h2>
+
+                <p>
+                    Ingrese productos y presione el botón
+                    "Calcular Compra".
+                </p>
+
+            </article>
+
+            <!-- BARRA DE PRESUPUESTO -->
+
+            <article class="card">
+
+                <h2>Uso del Presupuesto</h2>
+
+                <div class="barra">
+
+                    <div
+                        id="progreso"
+                        class="progreso">
+                    </div>
+
+                </div>
+
+                <p id="textoPorcentaje">
+                    0%
+                </p>
+
+            </article>
+
+        </section>
+
+        <!-- ================= CASOS ================= -->
+
+        <section id="casos">
+
+            <h2>Casos de Estudio para Probar</h2>
+
+            <div class="casos-grid">
+
+                <article class="caso">
+
+                    <h3>Caso 1</h3>
+
+                    <p>
+                        Presupuesto: 500 Bs
+                    </p>
+
+                    <p>
+                        Compra total: 580 Bs
+                    </p>
+
+                    <p>
+                        Resultado esperado:
+                        El presupuesto no alcanza.
+                    </p>
+
+                    <button id="caso1">
+                        Cargar Caso
+                    </button>
+
+                </article>
+
+                <article class="caso">
+
+                    <h3>Caso 2</h3>
+
+                    <p>
+                        Presupuesto: 1000 Bs
+                    </p>
+
+                    <p>
+                        Compra moderada.
+                    </p>
+
+                    <p>
+                        Resultado esperado:
+                        Presupuesto suficiente.
+                    </p>
+
+                    <button id="caso2">
+                        Cargar Caso
+                    </button>
+
+                </article>
+
+                <article class="caso">
+
+                    <h3>Caso 3</h3>
+
+                    <p>
+                        Presupuesto: 800 Bs
+                    </p>
+
+                    <p>
+                        Compra cercana al límite.
+                    </p>
+
+                    <p>
+                        Resultado esperado:
+                        Gasto alto.
+                    </p>
+
+                    <button id="caso3">
+                        Cargar Caso
+                    </button>
+
+                </article>
+
+                <article class="caso">
+
+                    <h3>Caso 4</h3>
+
+                    <p>
+                        Presupuesto: 1200 Bs
+                    </p>
+
+                    <p>
+                        Compra pequeña.
+                    </p>
+
+                    <p>
+                        Resultado esperado:
+                        Gasto bajo.
+                    </p>
+
+                    <button id="caso4">
+                        Cargar Caso
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- ================= CONCLUSIONES ================= -->
+
+        <section id="conclusiones">
+
+            <article class="card">
+
+                <h2>Conclusiones</h2>
+
+                <p>
+                    La planificación del presupuesto familiar
+                    permite controlar mejor los gastos y evitar
+                    compras que superen la capacidad económica
+                    disponible.
+                </p>
+
+                <p>
+                    Este simulador demuestra cómo la programación
+                    web puede utilizarse para representar y analizar
+                    situaciones reales mediante cálculos sencillos.
+                </p>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            Programación Web I - Simulador de Compras Familiares
+        </p>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

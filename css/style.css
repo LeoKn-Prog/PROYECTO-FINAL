@@ -1,0 +1,549 @@
+/* ===================================
+   VARIABLES
+=================================== */
+
+:root{
+
+    --bg:#0f172a;
+
+    --surface:#1e293b;
+
+    --surface-hover:#334155;
+
+    --primary:#6366f1;
+    --primary-dark:#4f46e5;
+
+    --success:#22c55e;
+    --warning:#f59e0b;
+    --danger:#ef4444;
+
+    --text:#f8fafc;
+    --text-soft:#cbd5e1;
+
+    --border:#475569;
+
+    --gradient:
+    linear-gradient(
+        135deg,
+        #6366f1,
+        #8b5cf6
+    );
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,.25);
+}
+
+/* ===================================
+   RESET
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+    "Segoe UI",
+    sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    line-height:1.7;
+}
+
+/* ===================================
+   HEADER
+=================================== */
+
+.hero{
+
+    background:var(--gradient);
+
+    text-align:center;
+
+    padding:70px 20px;
+}
+
+.hero h1{
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+}
+
+.hero p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#eef2ff;
+}
+
+/* ===================================
+   NAV
+=================================== */
+
+nav{
+
+    position:relative;
+
+    top:0;
+
+    z-index:1000;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    padding:16px;
+
+    background:rgba(15,23,42,.95);
+
+    backdrop-filter:blur(10px);
+
+    border-bottom:
+    1px solid var(--border);
+}
+
+nav a{
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+nav a:hover{
+
+    color:#a5b4fc;
+}
+
+/* ===================================
+   SECCIONES
+=================================== */
+
+section{
+
+    padding:40px 8%;
+}
+
+section h2{
+
+    margin-bottom:15px;
+
+    font-size:2rem;
+}
+
+section p{
+
+    margin-bottom:12px;
+
+    color:var(--text-soft);
+}
+
+/* ===================================
+   TARJETAS
+=================================== */
+
+.card{
+
+    background:var(--surface);
+
+    padding:25px;
+
+    border-radius:18px;
+
+    border:
+    1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:
+    translateY(-4px);
+
+    background:
+    var(--surface-hover);
+}
+
+.card + .card{
+
+    margin-top:20px;
+}
+
+/* ===================================
+   FORMULARIO
+=================================== */
+
+.formulario{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:20px;
+}
+
+.grupo{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+label{
+
+    margin-bottom:8px;
+
+    font-weight:600;
+}
+
+input{
+
+    padding:14px;
+
+    border-radius:10px;
+
+    border:
+    1px solid var(--border);
+
+    background:#0f172a;
+
+    color:white;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+input:focus{
+
+    border-color:
+    var(--primary);
+}
+
+/* ===================================
+   BOTONES
+=================================== */
+
+.botones{
+
+    margin-top:20px;
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:14px 22px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+button:hover{
+
+    transform:
+    translateY(-2px);
+}
+
+#agregar,
+#calcular{
+
+    background:var(--gradient);
+
+    color:white;
+}
+
+#limpiar{
+
+    background:var(--danger);
+
+    color:white;
+}
+
+.caso button{
+
+    width:100%;
+
+    margin-top:15px;
+
+    background:var(--gradient);
+
+    color:white;
+}
+
+/* ===================================
+   TABLA
+=================================== */
+
+.tabla-container{
+
+    overflow-x:auto;
+
+    margin-top:20px;
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+thead{
+
+    background:var(--gradient);
+}
+
+th{
+
+    color:white;
+
+    padding:14px;
+}
+
+td{
+
+    padding:14px;
+
+    text-align:center;
+
+    border-bottom:
+    1px solid var(--border);
+}
+
+tbody tr{
+
+    transition:.3s;
+}
+
+tbody tr:hover{
+
+    background:
+    rgba(99,102,241,.15);
+}
+
+/* ===================================
+   RESULTADOS
+=================================== */
+
+.resultado-card{
+
+    transition:.3s;
+}
+
+.exito{
+
+    border-left:
+    8px solid var(--success);
+}
+
+.alerta{
+
+    border-left:
+    8px solid var(--warning);
+}
+
+.peligro{
+
+    border-left:
+    8px solid var(--danger);
+}
+
+/* ===================================
+   BARRA
+=================================== */
+
+.barra{
+
+    width:100%;
+
+    height:24px;
+
+    background:#0f172a;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    border:
+    1px solid var(--border);
+
+    margin-top:20px;
+}
+
+.progreso{
+
+    width:0%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #22c55e,
+        #16a34a
+    );
+
+    transition:.6s;
+}
+
+#textoPorcentaje{
+
+    margin-top:12px;
+
+    font-weight:bold;
+}
+
+/* ===================================
+   CASOS
+=================================== */
+
+#casos h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+}
+
+.casos-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.caso{
+
+    background:var(--surface);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+}
+
+.caso:hover{
+
+    transform:
+    translateY(-4px);
+
+    background:
+    var(--surface-hover);
+}
+
+.caso h3{
+
+    color:#a5b4fc;
+
+    margin-bottom:10px;
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+
+footer{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    padding:25px;
+
+    background:#020617;
+
+    border-top:
+    1px solid var(--border);
+}
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media(max-width:768px){
+
+    .hero h1{
+
+        font-size:2.2rem;
+    }
+
+    .formulario{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* ===================================
+   CELULAR
+=================================== */
+
+@media(max-width:480px){
+
+    nav{
+
+        flex-direction:column;
+
+        align-items:center;
+    }
+
+    section{
+
+        padding:30px 20px;
+    }
+
+    .hero{
+
+        padding:50px 20px;
+    }
+
+    .hero h1{
+
+        font-size:1.8rem;
+    }
+
+}
